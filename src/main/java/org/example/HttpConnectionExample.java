@@ -1,3 +1,5 @@
+package org.example;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -15,8 +17,6 @@ public class HttpConnectionExample {
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestMethod("GET");
         con.setRequestProperty("User-Agent", USER_AGENT);
-
-        //The following invocation perform the connection implicitly before getting the code
         int responseCode = con.getResponseCode();
         System.out.println("GET Response Code :: " + responseCode);
 
@@ -30,8 +30,6 @@ public class HttpConnectionExample {
                 response.append(inputLine);
             }
             in.close();
-
-            // print result
             System.out.println(response.toString());
         } else {
             System.out.println("GET request not worked");
